@@ -90,9 +90,3 @@ Older notebooks don't have pinned environments yet; the main library versions ar
 End-to-end, applied work lives in dedicated repositories:
 
 - [**rossmann-forecasting-benchmark**](https://github.com/soutogustavo/rossmann-forecasting-benchmark): multi-store sales forecasting (Prophet baseline → global XGBoost) with a retraining pipeline on AWS
-
----
-
-## License
-
-[MIT](./LICENSE)
