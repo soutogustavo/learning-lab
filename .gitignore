@@ -158,3 +158,82 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+# =====================================================================
+# learning-lab additions
+# =====================================================================
+
+# --- Secrets & credentials -------------------------------------------
+# (.env is already ignored above; these cover variants and key files)
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+credentials.json
+service-account*.json
+.aws/
+.streamlit/secrets.toml
+
+# --- Terraform ---------------------------------------------------------
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+# NOTE: .terraform.lock.hcl is intentionally NOT ignored (commit it,
+# it pins provider versions, same idea as uv.lock)
+
+# --- Local data & large artifacts -------------------------------------
+# Keep committed samples small. Put downloaded/full datasets in a
+# folder named `datasets/` inside each topic; it is never committed.
+**/datasets/
+*.parquet
+*.duckdb
+*.duckdb.wal
+*.feather
+*.h5
+*.hdf5
+*.zip
+*.gz
+
+# --- ML experiment tracking & model artifacts -------------------------
+mlruns/
+mlartifacts/
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+wandb/
+
+# --- LLM / agent tooling ----------------------------------------------
+.langgraph_api/
+.chroma/
+chroma_db/
+*.faiss
+.cache/
+
+# --- Containers --------------------------------------------------------
+docker-compose.override.yml
+
+# --- OS ----------------------------------------------------------------
+.DS_Store
+.AppleDouble
+._*
+Thumbs.db
+
+# --- Editors / IDEs ----------------------------------------------------
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*~
